@@ -369,6 +369,33 @@ class HttpStatusCodes:
     A server operator has received a legal demand to deny access to a resource or to a set of resources that includes the requested resource.The code 451 was chosen as a reference to the novel Fahrenheit 451 (see the Acknowledgements in the RFC).
     """
 
+    # Internet Information Service
+    CODE_440_LOGIN_TIME_OUT: int = 440
+
+    CODE_449_RETRY_WITH: int = 449
+
+    CODE_451_REDIRECT: int = 451
+
+    # nginx
+    CODE_444_NO_RESPONSE: int = 444
+
+    CODE_494_REQUEST_HEADER_TOO_LARGE: int = 494
+
+    CODE_495_SSL_CERTIFICATE_ERROR: int = 495
+
+    CODE_496_SSL_CERTIFICATE_REQUIRED: int = 496
+
+    CODE_497_HTTP_REQUEST_SENT_TO_HTTPS_PORT: int = 497
+
+    CODE_499_CLIENT_CLOSED_REQUEST: int = 499
+
+    # AWS Elastic Load Balancer
+    CODE_460: int = 460
+
+    CODE_463: int = 463
+
+    CODE_561_UNAUTHORIZED: int = 561
+
     # 5xx
     CODE_500_INTERNAL_SERVER_ERROR: int = 500
     """
@@ -447,5 +474,28 @@ class HttpStatusCodes:
     The client needs to authenticate to gain network access. Intended for use by intercepting proxies used to control access to the network (e.g., "captive portals" used to require agreement to Terms of Service before granting full Internet access via a Wi-Fi hotspot).
     """
 
+    # unofficial
+    CODE_419_PAGE_EXPIRED: int = 419
 
-print(HttpStatusCodes.CODE_511_NETWORK_AUTHENTICATION_REQUIRED)
+    CODE_420_METHOD_FAILURE: int = 420
+
+    CODE_420_ENHANCE_YOUR_CALM: int = 420
+
+    CODE_430_REQUEST_HEADER_FIELDS_TOO_LARGE: int = 430
+
+    CODE_450_BLOCKED_BY_WINDOWS_PARENTAL_CONTROLS: int = 450
+
+    CODE_499_TOKEN_REQUIRED: int = 499
+
+    CODE_509_BANDWITH_LIMIT_EXCEEDED: int = 509
+
+    CODE_529_SITE_IS_OVERLOADED: int = 529
+
+    CODE_530_SITE_IS_FROZEN: int = 530
+
+    CODE_598_NETWORK_READ_TIMEOUT_ERROR: int = 598
+
+    CODE_599_NETWORK_CONNECT_TIMEOUT_ERROR: int = 599
+
+
+print(HttpStatusCodes.CODE_508_LOOP_DETECTED)
