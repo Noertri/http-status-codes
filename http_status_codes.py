@@ -697,4 +697,4 @@ if __name__ == "__main__":
     except Exception as e:
         print(f"{e}")
     finally:
-        print(HTTP_STATUS_CODES.CODE_100_CONTINUE)
+        print(HTTP_STATUS_CODES.CODE_520_WEB_SERVER_RETURNED_AN_UNKNOWN_ERROR)
