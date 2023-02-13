@@ -371,30 +371,90 @@ class HttpStatusCodes(object):
 
     # Microsoft Internet Information Service
     CODE_440_LOGIN_TIME_OUT: int = 440
+    """
+    440 Login Time-out (Microsoft IIS)
+    ----------------------------------
+    The client's session has expired and must log in again.
+    """
 
     CODE_449_RETRY_WITH: int = 449
+    """
+    449 Retry With (Microsoft IIS)
+    ------------------------------
+    The server cannot honour the request because the user has not provided the required information.
+    """
 
     CODE_451_REDIRECT: int = 451
+    """
+    451 Redirect (Microsoft IIS)
+    ----------------------------
+    Used in Exchange ActiveSync when either a more efficient server is available or the server cannot access the users' mailbox.[44] The client is expected to re-run the HTTP AutoDiscover operation to find a more appropriate server.
+    """
 
     # nginx
     CODE_444_NO_RESPONSE: int = 444
+    """
+    444 No Response (nginx)
+    -----------------------
+    Used internally to instruct the server to return no information to the client and close the connection immediately.
+    """
 
     CODE_494_REQUEST_HEADER_TOO_LARGE: int = 494
+    """
+    494 Request header too large (nginx)
+    ------------------------------------
+    Client sent too large request or too long header line.
+    """
 
     CODE_495_SSL_CERTIFICATE_ERROR: int = 495
+    """
+    495 SSL Certificate Error (nginx)
+    ---------------------------------
+    An expansion of the 400 Bad Request response code, used when the client has provided an invalid client certificate.
+    """
 
     CODE_496_SSL_CERTIFICATE_REQUIRED: int = 496
+    """
+    496 SSL Certificate Required (nginx)
+    ------------------------------------
+    An expansion of the 400 Bad Request response code, used when a client certificate is required but not provided.
+    """
 
     CODE_497_HTTP_REQUEST_SENT_TO_HTTPS_PORT: int = 497
+    """
+    497 HTTP Request Sent to HTTPS Port (nginx)
+    -------------------------------------------
+    An expansion of the 400 Bad Request response code, used when the client has made a HTTP request to a port listening for HTTPS requests.
+    """
 
     CODE_499_CLIENT_CLOSED_REQUEST: int = 499
+    """
+    499 Client Closed Request (nginx)
+    ---------------------------------
+    Used when the client has closed the request before the server could send a response.
+    """
 
     # AWS Elastic Load Balancer
     CODE_460: int = 460
+    """
+    460 (AWS Elastic Load Balancer)
+    -------------------------------
+    Client closed the connection with the load balancer before the idle timeout period elapsed. Typically when client timeout is sooner than the Elastic Load Balancer's timeout.
+    """
 
     CODE_463: int = 463
+    """
+    463 (AWS Elastic Load Balancer)
+    -------------------------------
+    The load balancer received an X-Forwarded-For request header with more than 30 IP addresses.
+    """
 
     CODE_561_UNAUTHORIZED: int = 561
+    """
+    561 Unauthorized (AWS Elastic Load Balancer)
+    --------------------------------------------
+    An error around authentication returned by a server registered with a load balancer. You configured a listener rule to authenticate users, but the identity provider (IdP) returned an error code when authenticating the user.
+    """
 
     # 5xx
     CODE_500_INTERNAL_SERVER_ERROR: int = 500
@@ -476,39 +536,165 @@ class HttpStatusCodes(object):
 
     # unofficial
     CODE_419_PAGE_EXPIRED: int = 419
+    """
+    419 Page Expired (Laravel Framework) (unofficial)
+    -------------------------------------------------
+    Used by the Laravel Framework when a CSRF Token is missing or expired.
+    """
 
     CODE_420_METHOD_FAILURE: int = 420
+    """
+    420 Method Failure (Spring Framework) (unofficial)
+    --------------------------------------------------
+    A deprecated response used by the Spring Framework when a method has failed.
+    """
 
     CODE_420_ENHANCE_YOUR_CALM: int = 420
+    """
+    420 Enhance Your Calm (Twitter) (unofficial)
+    --------------------------------------------
+    Returned by version 1 of the Twitter Search and Trends API when the client is being rate limited; versions 1.1 and later use the 429 Too Many Requests response code instead. The phrase "Enhance your calm" comes from the 1993 movie Demolition Man, and its association with this number is likely a reference to cannabis.
+    """
 
     CODE_430_REQUEST_HEADER_FIELDS_TOO_LARGE: int = 430
+    """
+    430 Request Header Fields Too Large (Shopify) (unofficial)
+    ----------------------------------------------------------
+    Used by Shopify, instead of the 429 Too Many Requests response code, when too many URLs are requested within a certain time frame.
+    """
 
     CODE_450_BLOCKED_BY_WINDOWS_PARENTAL_CONTROLS: int = 450
+    """
+    450 Blocked by Windows Parental Controls (Microsoft) (unofficial)
+    -----------------------------------------------------------------
+    The Microsoft extension code indicated when Windows Parental Controls are turned on and are blocking access to the requested webpage.
+    """
+
+    CODE_498_INVALID_TOKEN = 498
+    """
+    498 Invalid Token (Esri) (unofficial)
+    -------------------------------------
+    Returned by ArcGIS for Server. Code 498 indicates an expired or otherwise invalid token.
+    """
 
     CODE_499_TOKEN_REQUIRED: int = 499
+    """
+    499 Token Required (Esri) (unofficial)
+    --------------------------------------
+    Returned by ArcGIS for Server. Code 499 indicates that a token is required but was not submitted.
+    """
 
     CODE_509_BANDWITH_LIMIT_EXCEEDED: int = 509
+    """
+    509 Bandwidth Limit Exceeded (Apache Web Server/cPanel) (unofficial)
+    --------------------------------------------------------------------
+    The server has exceeded the bandwidth specified by the server administrator; this is often used by shared hosting providers to limit the bandwidth of customers.
+    """
 
     CODE_529_SITE_IS_OVERLOADED: int = 529
+    """
+    529 Site is overloaded (unofficial)
+    -----------------------------------
+    Used by Qualys in the SSLLabs server testing API to signal that the site can't process the request.
+    """
 
     CODE_530_SITE_IS_FROZEN: int = 530
+    """
+    530 Site is frozen (unofficial)
+    -------------------------------
+    Used by the Pantheon Systems web platform to indicate a site that has been frozen due to inactivity.
+    """
 
     CODE_598_NETWORK_READ_TIMEOUT_ERROR: int = 598
+    """
+    598 (Informal convention) Network read timeout error (unofficial)
+    -----------------------------------------------------------------
+    Used by some HTTP proxies to signal a network read timeout behind the proxy to a client in front of the proxy.
+    """
 
     CODE_599_NETWORK_CONNECT_TIMEOUT_ERROR: int = 599
+    """
+    599 Network Connect Timeout Error (unofficial)
+    ----------------------------------------------
+    An error used by some HTTP proxies to signal a network connect timeout behind the proxy to a client in front of the proxy.
+    """
+
+    # cloudflare
+    CODE_520_WEB_SERVER_RETURNED_AN_UNKNOWN_ERROR: int = 520
+    """
+    520 Web Server Returned an Unknown Error (cloudflare)
+    -----------------------------------------------------
+    The origin server returned an empty, unknown, or unexpected response to Cloudflare.
+    """
+
+    CODE_521_WEB_SERVER_IS_DOWN: int = 521
+    """
+    521 Web Server Is Down (cloudflare)
+    -----------------------------------
+    The origin server refused connections from Cloudflare. Security solutions at the origin may be blocking legitimate connections from certain Cloudflare IP addresses.
+    """
+
+    CODE_522_CONNECTION_TIMED_OUT: int = 522
+    """
+    522 Connection Timed Out (cloudflare)
+    -------------------------------------
+    Cloudflare timed out contacting the origin server.
+    """
+
+    CODE_523_ORIGIN_IS_UNREACHABLE: int = 523
+    """
+    523 Origin Is Unreachable (cloudflare)
+    --------------------------------------
+    Cloudflare could not reach the origin server; for example, if the DNS records for the origin server are incorrect or missing.
+    """
+
+    CODE_524_A_TIMEOUT_OCCURED: int = 524
+    """
+    524 A Timeout Occurred (cloudflare)
+    -----------------------------------
+    Cloudflare was able to complete a TCP connection to the origin server, but did not receive a timely HTTP response.
+    """
+
+    CODE_525_SSL_HANDSHAKE_FAILED: int = 525
+    """
+    525 SSL Handshake Failed (cloudflare)
+    -------------------------------------
+    Cloudflare could not negotiate a SSL/TLS handshake with the origin server.
+    """
+
+    CODE_526_INVALID_SSL_CERTIFICATE: int = 526
+    """
+    526 Invalid SSL Certificate (cloudflare)
+    ----------------------------------------
+    Cloudflare could not validate the SSL certificate on the origin web server. Also used by Cloud Foundry's gorouter.
+    """
+
+    CODE_527_RAILGUN_ERROR: int = 527
+    """
+    527 Railgun Error (cloudflare)
+    ------------------------------
+    Error 527 indicates an interrupted connection between Cloudflare and the origin server's Railgun server.
+    """
+
+    CODE_530: int = 530
+    """
+    530 (cloudflare)
+    ----------------
+    Error 530 is returned along with a 1xxx error.
+    """
+
 
     def __setattr__(self, name, value):
         raise AttributeError(f"Cannot assign value {value} to {name}!!!")
 
     def __delattr__(self, name):
-        raise Exception(f"Delete operation cannot be performed on attribute {name}!!!")
+        raise AttributeError(f"Operation cannot be performed on attribute {name}!!!")
 
 
 if __name__ == "__main__":
     try:
         HTTP_STATUS_CODES = HttpStatusCodes()
-        HTTP_STATUS_CODES.CODE_100_CONTINUE = 110
     except Exception as e:
         print(f"{e}")
     finally:
-        print(HttpStatusCodes.CODE_100_CONTINUE)
+        print(HTTP_STATUS_CODES.CODE_100_CONTINUE)
