@@ -1,4 +1,4 @@
-class HttpStatusCodes:
+class HttpStatusCodes(object):
     """
     Colletion of all http response status codes.
 
@@ -369,7 +369,7 @@ class HttpStatusCodes:
     A server operator has received a legal demand to deny access to a resource or to a set of resources that includes the requested resource.The code 451 was chosen as a reference to the novel Fahrenheit 451 (see the Acknowledgements in the RFC).
     """
 
-    # Internet Information Service
+    # Microsoft Internet Information Service
     CODE_440_LOGIN_TIME_OUT: int = 440
 
     CODE_449_RETRY_WITH: int = 449
@@ -497,5 +497,18 @@ class HttpStatusCodes:
 
     CODE_599_NETWORK_CONNECT_TIMEOUT_ERROR: int = 599
 
+    def __setattr__(self, name, value):
+        raise AttributeError(f"Cannot assign value {value} to {name}!!!")
 
-print(HttpStatusCodes.CODE_508_LOOP_DETECTED)
+    def __delattr__(self, name):
+        raise Exception(f"Delete operation cannot be performed on attribute {name}!!!")
+
+
+if __name__ == "__main__":
+    try:
+        HTTP_STATUS_CODES = HttpStatusCodes()
+        HTTP_STATUS_CODES.CODE_100_CONTINUE = 110
+    except Exception as e:
+        print(f"{e}")
+    finally:
+        print(HttpStatusCodes.CODE_100_CONTINUE)
