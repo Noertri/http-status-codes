@@ -683,7 +683,6 @@ class HttpStatusCodes(object):
     Error 530 is returned along with a 1xxx error.
     """
 
-
     def __setattr__(self, name, value):
         raise AttributeError(f"Cannot assign value {value} to {name}!!!")
 
@@ -692,9 +691,5 @@ class HttpStatusCodes(object):
 
 
 if __name__ == "__main__":
-    try:
-        HTTP_STATUS_CODES = HttpStatusCodes()
-    except Exception as e:
-        print(f"{e}")
-    finally:
-        print(HTTP_STATUS_CODES.CODE_520_WEB_SERVER_RETURNED_AN_UNKNOWN_ERROR)
+    HTTP_STATUS_CODES = HttpStatusCodes()
+    print(HTTP_STATUS_CODES.CODE_301_MOVED_PERMANENTLY)
