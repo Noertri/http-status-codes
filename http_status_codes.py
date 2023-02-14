@@ -194,45 +194,169 @@ class HTTPStatusCodes:
 
         CODE_405_METHOD_NOT_ALLOWED:
 
-            405 Method Not Allowed
+            405 Method Not Allowed.
     
             A request method is not supported for the requested resource; for example, a GET request on a form that requires data to be presented via POST, or a PUT request on a read-only resource.
 
         CODE_406_NOT_ACCEPTABLE:
 
-            406 Not Acceptable
+            406 Not Acceptable.
     
             The requested resource is capable of generating only content not acceptable according to the Accept headers sent in the request. See Content negotiation.
 
         CODE_407_PROXY_AUTHENTICATION_REQUIRED:
 
-            407 Proxy Authentication Required
+            407 Proxy Authentication Required.
     
             The client must first authenticate itself with the proxy.
 
         CODE_408_REQUEST_TIMEOUT:
 
-            408 Request Timeout
+            408 Request Timeout.
     
             The server timed out waiting for the request. According to HTTP specifications: "The client did not produce a request within the time that the server was prepared to wait. The client MAY repeat the request without modifications at any later time."
 
         CODE_409_CONFLICT:
 
-            409 Conflict
+            409 Conflict.
     
             Indicates that the request could not be processed because of conflict in the current state of the resource, such as an edit conflict between multiple simultaneous updates.
 
         CODE_410_GONE:
 
-            410 Gone
+            410 Gone.
     
             Indicates that the resource requested was previously in use but is no longer available and will not be available again. This should be used when a resource has been intentionally removed and the resource should be purged. Upon receiving a 410 status code, the client should not request the resource in the future. Clients such as search engines should remove the resource from their indices. Most use cases do not require clients and search engines to purge the resource, and a "404 Not Found" may be used instead.
 
         CODE_411_LENGTH_REQUIRED:
 
-            411 Length Required
+            411 Length Required.
     
             The request did not specify the length of its content, which is required by the requested resource.
+
+        CODE_412_PRECONDITION_FAILED:
+
+            412 Precondition Failed.
+    
+            The server does not meet one of the preconditions that the requester put on the request header fields.
+
+        CODE_413_PAYLOAD_TOO_LARGE:
+
+            413 Payload Too Large.
+    
+            The request is larger than the server is willing or able to process. Previously called "Request Entity Too Large" in RFC 2616.
+
+        CODE_414_URI_TOO_LONG:
+
+            414 URI Too Long.
+    
+            The URI provided was too long for the server to process. Often the result of too much data being encoded as a query-string of a GET request, in which case it should be converted to a POST request. Called "Request-URI Too Long" previously in RFC 2616.
+
+        CODE_415_UNSUPPORTED_MEDIA_TYPE:
+
+            415 Unsupported Media Type.
+    
+            The request entity has a media type which the server or resource does not support. For example, the client uploads an image as image/svg+xml, but the server requires that images use a different format.
+
+        CODE_416_RANGE_NOT_SATISFIABLE:
+
+            416 Range Not Satisfiable.
+    
+            The client has asked for a portion of the file (byte serving), but the server cannot supply that portion. For example, if the client asked for a part of the file that lies beyond the end of the file. Called "Requested Range Not Satisfiable" previously RFC 2616.
+
+        CODE_417_EXPECTATION_FAILED:
+
+            417 Expectation Failed.
+    
+            The server cannot meet the requirements of the Expect request-header field.
+
+        CODE_418_IM_A_TEAPOT:
+
+            418 I'm a teapot.
+    
+            This code was defined in 1998 as one of the traditional IETF April Fools' jokes, in RFC 2324, Hyper Text Coffee Pot Control Protocol, and is not expected to be implemented by actual HTTP servers. The RFC specifies this code should be returned by teapots requested to brew coffee. This HTTP status is used as an Easter egg in some websites, such as Google.com's "I'm a teapot" easter egg. Sometimes, this status code is also used as a response to a blocked request, instead of the more appropriate 403 Forbidden.
+
+        CODE_421_MISDIRECTED_REQUEST:
+
+            421 Misdirected Request.
+    
+            The request was directed at a server that is not able to produce a response (for example because of connection reuse).
+
+        CODE_422_UNPROCESSABLE_ENTITY:
+
+            422 Unprocessable Entity.
+    
+            The request was well-formed but was unable to be followed due to semantic errors.
+
+        CODE_423_LOCKED:
+
+            423 Locked (WebDAV).
+    
+            The resource that is being accessed is locked.
+
+        CODE_424_FAILED_DEPENDENCY:
+
+            424 Failed Dependency (WebDAV).
+    
+            The request failed because it depended on another request and that request failed (e.g., a PROPPATCH).
+
+        CODE_425_TOO_EARLY:
+
+            425 Too Early.
+    
+            Indicates that the server is unwilling to risk processing a request that might be replayed.
+
+        CODE_426_UPGRADE_REQUIRED:
+
+            426 Upgrade Required.
+    
+            The client should switch to a different protocol such as TLS/1.3, given in the Upgrade header field.
+
+        CODE_428_PRECONDITION_REQUIRED:
+
+            428 Precondition Required.
+    
+            The origin server requires the request to be conditional. Intended to prevent the 'lost update' problem, where a client GETs a resource's state, modifies it, and PUTs it back to the server, when meanwhile a third party has modified the state on the server, leading to a conflict.
+
+        CODE_429_TOO_MANY_REQUESTS:
+
+            429 Too Many Requests.
+    
+            The user has sent too many requests in a given amount of time. Intended for use with rate-limiting schemes.
+
+        CODE_431_REQUEST_HEADER_FIELDS_TOO_LARGE:
+
+            431 Request Header Fields Too Large.
+    
+            The server is unwilling to process the request because either an individual header field, or all the header fields collectively, are too large.
+
+        CODE_440_LOGIN_TIME_OUT:
+
+            440 Login Time-out (Microsoft IIS).
+    
+            The client's session has expired and must log in again.
+
+        CODE_449_RETRY_WITH:
+
+            449 Retry With (Microsoft IIS).
+    
+            The server cannot honour the request because the user has not provided the required information.
+
+        CODE_451_REDIRECT:
+
+            451 Redirect (Microsoft IIS)
+    
+            Used in Exchange ActiveSync when either a more efficient server is available or the server cannot access the users' mailbox.[44] The client is expected to re-run the HTTP AutoDiscover operation to find a more appropriate server.
+
+        CODE_444_NO_RESPONSE:
+
+            444 No Response (nginx)
+    
+            Used internally to instruct the server to return no information to the client and close the connection immediately.
+
+
+
+
     """
     
     # 1xx
