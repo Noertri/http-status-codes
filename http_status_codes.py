@@ -360,7 +360,189 @@ class HTTPStatusCodes:
         499 Client Closed Request (nginx).
         
         Used when the client has closed the request before the server could send a response.
-    """
+        
+    CODE_460
+        460 (AWS Elastic Load Balancer).
+    
+        Client closed the connection with the load balancer before the idle timeout period elapsed. Typically when client timeout is sooner than the
+        Elastic Load Balancer's timeout.
+        
+    CODE_463
+        463 (AWS Elastic Load Balancer).
+    
+        The load balancer received an X-Forwarded-For request header with more than 30 IP addresses.
+        
+    CODE_561_UNAUTHORIZED
+        561 Unauthorized (AWS Elastic Load Balancer).
+    
+        An error around authentication returned by a server registered with a load balancer. You configured a listener rule to authenticate users, but the
+        identity provider (IdP) returned an error code when authenticating the user.
+        
+    CODE_500_INTERNAL_SERVER_ERROR
+        500 Internal Server Error.
+    
+        A generic error message, given when an unexpected condition was encountered and no more specific message is suitable.
+        
+    CODE_501_NOT_IMPLEMENTED
+        501 Not Implemented.
+    
+        The server either does not recognize the request method, or it lacks the ability to fulfil the request. Usually this implies future availability
+        (e.g., a new feature of a web-service API).
+    
+    CODE_502_BAD_GATEWAY
+        502 Bad Gateway.
+    
+        The server was acting as a gateway or proxy and received an invalid response from the upstream server.
+    
+    CODE_503_SERVICE_UNAVAILABLE
+        503 Service Unavailable.
+    
+        The server cannot handle the request (because it is overloaded or down for maintenance). Generally, this is a temporary state.
+    
+    CODE_504_GATEWAY_TIMEOUT
+        504 Gateway Timeout.
+    
+        The server was acting as a gateway or proxy and did not receive a timely response from the upstream server.
+    
+    CODE_505_HTTP_VERSION_NOT_SUPPORTED
+        505 HTTP Version Not Supported.
+    
+        The server does not support the HTTP version used in the request.
+    
+    CODE_506_VARIANT_ALSO_NEGOTIATES
+        506 Variant Also Negotiates.
+    
+        Transparent content negotiation for the request results in a circular reference.
+    
+    CODE_507_INSUFFICIENT_STORAGE
+        507 Insufficient Storage (WebDAV).
+    
+        The server is unable to store the representation needed to complete the request.
+    
+    CODE_508_LOOP_DETECTED
+        508 Loop Detected (WebDAV).
+    
+        The server detected an infinite loop while processing the request (sent instead of 208 Already Reported).
+    
+    CODE_510_NOT_EXTENDED
+        510 Not Extended.
+    
+        Further extensions to the request are required for the server to fulfill it.
+    
+    CODE_511_NETWORK_AUTHENTICATION_REQUIRED
+        511 Network Authentication Required.
+    
+        The client needs to authenticate to gain network access. Intended for use by intercepting proxies used to control access to the network (e.g.,
+        "captive portals" used to require agreement to Terms of Service before granting full Internet access via a Wi-Fi hotspot).
+        
+    CODE_419_PAGE_EXPIRED
+        419 Page Expired (Laravel Framework) (unofficial).
+    
+        Used by the Laravel Framework when a CSRF Token is missing or expired.
+    
+    CODE_420_METHOD_FAILURE
+        420 Method Failure (Spring Framework) (unofficial).
+    
+        A deprecated response used by the Spring Framework when a method has failed.
+       
+    CODE_420_ENHANCE_YOUR_CALM
+        420 Enhance Your Calm (Twitter) (unofficial).
+    
+        Returned by version 1 of the Twitter Search and Trends API when the client is being rate limited; versions 1.1 and later use the 429 Too Many
+        Requests response code instead. The phrase "Enhance your calm" comes from the 1993 movie Demolition Man, and its association with this number is
+        likely a reference to cannabis.
+        
+    CODE_430_REQUEST_HEADER_FIELDS_TOO_LARGE
+        430 Request Header Fields Too Large (Shopify) (unofficial).
+    
+        Used by Shopify, instead of the 429 Too Many Requests response code, when too many URLs are requested within a certain time frame.
+        
+    CODE_450_BLOCKED_BY_WINDOWS_PARENTAL_CONTROLS
+        450 Blocked by Windows Parental Controls (Microsoft) (unofficial).
+    
+        The Microsoft extension code indicated when Windows Parental Controls are turned on and are blocking access to the requested webpage.
+        
+    CODE_498_INVALID_TOKEN
+        498 Invalid Token (Esri) (unofficial).
+    
+        Returned by ArcGIS for Server. Code 498 indicates an expired or otherwise invalid token.
+        
+    CODE_499_TOKEN_REQUIRED
+        499 Token Required (Esri) (unofficial).
+    
+        Returned by ArcGIS for Server. Code 499 indicates that a token is required but was not submitted.
+        
+    CODE_509_BANDWITH_LIMIT_EXCEEDED
+        509 Bandwidth Limit Exceeded (Apache Web Server/cPanel) (unofficial).
+    
+        The server has exceeded the bandwidth specified by the server administrator; this is often used by shared hosting providers to limit the bandwidth
+        of customers.
+        
+    CODE_529_SITE_IS_OVERLOADED
+        529 Site is overloaded (unofficial).
+    
+        Used by Qualys in the SSLLabs server testing API to signal that the site can't process the request.
+        
+    CODE_530_SITE_IS_FROZEN
+        530 Site is frozen (unofficial).
+    
+        Used by the Pantheon Systems web platform to indicate a site that has been frozen due to inactivity.
+     
+    CODE_598_NETWORK_READ_TIMEOUT_ERROR
+        598 (Informal convention) Network read timeout error (unofficial).
+    
+        Used by some HTTP proxies to signal a network read timeout behind the proxy to a client in front of the proxy.
+     
+    CODE_599_NETWORK_CONNECT_TIMEOUT_ERROR
+        599 Network Connect Timeout Error (unofficial).
+    
+        An error used by some HTTP proxies to signal a network connect timeout behind the proxy to a client in front of the proxy.
+    
+    CODE_520_WEB_SERVER_RETURNED_AN_UNKNOWN_ERROR
+        520 Web Server Returned an Unknown Error (cloudflare).
+    
+        The origin server returned an empty, unknown, or unexpected response to Cloudflare.
+     
+    CODE_521_WEB_SERVER_IS_DOWN
+        521 Web Server Is Down (cloudflare).
+    
+        The origin server refused connections from Cloudflare. Security solutions at the origin may be blocking legitimate connections from certain
+        Cloudflare IP addresses.
+     
+    CODE_522_CONNECTION_TIMED_OUT
+        522 Connection Timed Out (cloudflare).
+    
+        Cloudflare timed out contacting the origin server.
+        
+    CODE_523_ORIGIN_IS_UNREACHABLE
+        523 Origin Is Unreachable (cloudflare).
+    
+        Cloudflare could not reach the origin server; for example, if the DNS records for the origin server are incorrect or missing.
+        
+    CODE_524_A_TIMEOUT_OCCURED
+        524 A Timeout Occurred (cloudflare).
+    
+        Cloudflare was able to complete a TCP connection to the origin server, but did not receive a timely HTTP response.
+        
+    CODE_525_SSL_HANDSHAKE_FAILED
+        525 SSL Handshake Failed (cloudflare).
+    
+        Cloudflare could not negotiate a SSL/TLS handshake with the origin server.
+        
+    CODE_526_INVALID_SSL_CERTIFICATE
+        526 Invalid SSL Certificate (cloudflare).
+    
+        Cloudflare could not validate the SSL certificate on the origin web server. Also used by Cloud Foundry's gorouter.
+        
+    CODE_527_RAILGUN_ERROR
+        527 Railgun Error (cloudflare).
+    
+        Error 527 indicates an interrupted connection between Cloudflare and the origin server's Railgun server.
+        
+    CODE_530
+        530 (cloudflare).
+    
+        Error 530 is returned along with a 1xxx error."""
     
     # 1xx
     CODE_100_CONTINUE = 100
