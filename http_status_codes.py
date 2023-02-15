@@ -542,7 +542,11 @@ class HTTPStatusCodes:
     CODE_530
         530 (cloudflare).
     
-        Error 530 is returned along with a 1xxx error."""
+        Error 530 is returned along with a 1xxx error.
+    
+    
+    Wikipedia(List of HTTP status codes) - https://en.wikipedia.org/wiki/List_of_HTTP_status_codes
+    """
     
     # 1xx
     CODE_100_CONTINUE = 100
