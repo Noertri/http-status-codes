@@ -96,7 +96,7 @@ class HTTPStatusCodes:
     CODE_208_ALREADY_REPORTED
         208 Already Reported (WebDAV).
 
-        Used inside a <dav:propstat> response element to avoid repeatedly enumerating the internal members of multiple bindings to the same
+        Used inside a `<dav:propstat>` response element to avoid repeatedly enumerating the internal members of multiple bindings to the same
         collection.
     
     CODE_226_IM_USED
@@ -468,7 +468,7 @@ class HTTPStatusCodes:
     """
     208 Already Reported (WebDAV).
     
-    Used inside a <dav:propstat> response element to avoid repeatedly enumerating the internal members of multiple bindings to the same collection.
+    Used inside a `<dav:propstat>` response element to avoid repeatedly enumerating the internal members of multiple bindings to the same collection.
     """
     
     CODE_226_IM_USED = 226
