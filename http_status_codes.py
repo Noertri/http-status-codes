@@ -1,19 +1,20 @@
 class HTTPStatusCodes:
-    """List of all http response status codes.
-    
-    *1xx = informational responses*
-    
-    *2xx = successful responses*
-    
-    *3xx = redirection messages*
-    
-    *4xx = client error responses*
-    
-    *5xx = server error responses*
-    
-    
+    """List of all http response status codes. HTTP response status codes indicate whether a specific HTTP request has been successfully completed.
+    Responses are grouped in five classes::
+        1. informational responses (1xx).
+        2. successful response (2xx).
+        3. redirection message (3xx).
+        4. client error response (4xx).
+        5. server error responses (5xx).
+
+
+    References:
+        * `List of HTTP status codes (wikipedia) <https://en.wikipedia.org/wiki/List_of_HTTP_status_codes>`_
+        * `HTTP response status codes (MDN) <https://developer.mozilla.org/en-US/docs/Web/HTTP/Status>`_
+
+
     Attributes
-    ----------
+    ==========
     
     CODE_100_CONTINUE
         100 Continue.
@@ -545,7 +546,7 @@ class HTTPStatusCodes:
         Error 530 is returned along with a 1xxx error.
     
     
-    Wikipedia(List of HTTP status codes) - https://en.wikipedia.org/wiki/List_of_HTTP_status_codes
+    
     """
     
     # 1xx
